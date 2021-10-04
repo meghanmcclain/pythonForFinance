@@ -1,3 +1,4 @@
+#Looking at if Close is higher/lower than moving avg (50 day)
 import pandas as pd
 import numpy as np
 import yfinance as yf
