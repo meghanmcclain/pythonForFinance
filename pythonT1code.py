@@ -36,6 +36,7 @@ print(df.tail())
 pos=0 #enter if 1 (not entered if 0) use to determine if we are entering a position
 num=0 #keep track of row we are on
 percentchange=[] #empty list, add results of our trade in
+#df.to_csv('the_data.csv')
 
 for i in df.index:
     cmin=min(df["Ema_3"][i],df["Ema_5"][i],df["Ema_8"][i],df["Ema_10"][i],df["Ema_12"][i],df["Ema_15"][i])
@@ -45,14 +46,14 @@ for i in df.index:
 
     #if we are in a red white blue pattern
     if(cmin>cmax):
-        print("Red White Blue")
+        print(f"Red White Blue {i}")
         if(pos==0):
             bp=close #buy price
             pos=1 #turning on our position
             print("Buying now at "+str(bp))
 
     elif(cmin<cmax):
-        print("Blue White Red")
+        print(f"Blue White Red")
         if(pos==1):
             pos=0
             sp=close #sell price
